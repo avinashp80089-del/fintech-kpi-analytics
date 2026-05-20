@@ -73,7 +73,7 @@ def test_ab_test_continuous():
     treatment = pd.Series(rng.normal(115, 20, 500))
     result = run_ab_test(control, treatment, metric_type="continuous")
     assert result["significant"] is True
-    assert result["delta"] > 0
+    assert result["absolute_lift"] > 0
 
 
 # ── KPI metrics ───────────────────────────────────────────────────────────────
